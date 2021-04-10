@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/maureensanchez99/TheraLog#readme",
   "dependencies": {
-    "firebase": "^8.3.3"
+    "firebase": "^8.3.3",
+    "firebaseui": "^4.8.0"
   }
 }
