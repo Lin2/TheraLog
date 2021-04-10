@@ -25,7 +25,7 @@ nav{
     display: flex;
     align-items: center;
     justify-content: space-between;
-    height: 60px;
+    height: 50px;
 }
 
 nav ul{
@@ -36,10 +36,11 @@ nav .logo{
     font-family: Sweet Childish Demo;
     font-style: normal;
     font-weight: normal;
-    font-size: 90px;
+    font-size: 100px;
     line-height: 115px;
     text-shadow: 3px 7px 4px rgba(0, 0, 0, 0.25);
     transform: rotate(-3deg);
+    background: #FFDDD2;
 }
 
 .nav-items li{
@@ -52,5 +53,29 @@ nav .logo{
 }
 
 .nav-items li a{
+    color: black;
     text-decoration: none;
+    font-size: 40px;    
+
+    background: #83C5BE;
+    border-radius: 5px;
+    padding: 5px;
 }
+
+header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+text-container{
+    margin-right: 100px;
+}
+
+header p{
+    font-size: 40px;
+    line-height: 49px;
+    width: 645px;
+    text-align: center;
+}
+    
