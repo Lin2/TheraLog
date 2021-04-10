@@ -1,0 +1,9 @@
+  :root{
+      --button-color: #FFDDD2;
+      --button-color-hover: #e5c6bc;
+      --button-text-color: #000000;
+  }
+
+  .mdl-button--raised.mdl-button--colored{background:var(--button-color);color:var(--button-text-color)}.mdl-button--raised.mdl-button--colored:hover{background-color:var(--button-color-hover)}
+  .mdl-button--primary.mdl-button--primary{color: var(--button-color)}
+  .firebaseui-textfield.mdl-textfield .firebaseui-label::after{background-color: var(--button-color)}

@@ -6,19 +6,24 @@
 
 body{
     font-family: Calibri;
+    height: 100%;
+}
+
+html {
+    height: 100%;
 }
 
 /* Nav bar */
 
 .nav-container{
     background: #FFDDD2;
-    box-shadow: 3px 3px 4px rgba(0, 0, 0, 0.25);
-    height: 175px;
-}
-
-.wrapper{
+    box-shadow: 0px 3px 4px rgba(0, 0, 0, 0.25);
+    height: 150px;
     width: auto;
     margin: 0 auto;
+    padding-top: 50px;
+    z-index: 1;
+    position: relative;
 }
 
 nav{
@@ -26,6 +31,7 @@ nav{
     align-items: center;
     justify-content: space-between;
     height: 50px;
+    background-color: #FFDDD2;
 }
 
 nav ul{
@@ -41,11 +47,14 @@ nav .logo{
     text-shadow: 3px 7px 4px rgba(0, 0, 0, 0.25);
     transform: rotate(-3deg);
     background: #FFDDD2;
+
+    margin-left: 60px;
 }
 
 .nav-items li{
     list-style: none;
     margin-right: 30px;
+    background-color: #FFDDD2;
 }
 
 .nav-items li:nth-last-of-type(1){
@@ -62,21 +71,31 @@ nav .logo{
     padding: 5px;
 }
 
-header{
+.nav-items{
+    background-color: #FFDDD2;
+    margin-top: 50px;
+    margin-right: 50px;
+}
+
+.about-container{
+    margin-bottom: 0;
+    margin-top: 0;
+    height: 100%;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    padding-left: 50px;
+    z-index: 2;
 }
 
-text-container{
-    margin-right: 100px;
+td{
+    padding: 50px;
 }
 
-header p{
+.text-container {
     font-size: 40px;
-    line-height: 49px;
-    width: 645px;
     text-align: center;
+    padding-right: 100px;
+    float: left;
 }
  
 scroll-log {
