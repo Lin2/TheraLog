@@ -20,7 +20,12 @@ var uiConfig = {
     signInSuccessUrl: 'main.html ',
     signInOptions: [
       // Leave the lines as is for the providers you want to offer your users.
-      firebase.auth.EmailAuthProvider.PROVIDER_ID,
+     //firebase.auth.EmailAuthProvider.PROVIDER_ID,
+      {
+        provider: firebase.auth.EmailAuthProvider.PROVIDER_ID,
+        signInMethod: firebase.auth.EmailAuthProvider.EMAIL_PASSWORD_SIGN_IN_METHOD,
+        buttonColor: '#FFDDD2',
+      }
     ],
     // Terms of service url.
     //tosUrl: '<your-tos-url>',
