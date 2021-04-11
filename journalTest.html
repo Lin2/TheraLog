@@ -2,11 +2,45 @@
 
 <head>
     <title>Journal</title>
-    <link rel="stylesheet" href="journalStyle.css">
+    <link href="styles.css" rel="stylesheet">
+
 </head>
+
+<style>
+    #rank {
+    width: 22px;
+}
+
+#mood{
+    width: 20%;
+}
+
+#entry{
+    width: 100%;
+    height: 50%;
+}
+</style>
 
 <body>
     <div>
+        <script src='fireBase.js'></script>
+    <script src='main.js'></script>
+
+    <div class="nav-container">
+        <div class="wrapper">
+            <nav>
+                <div class="logo">
+                    THERALOG
+                </div>
+
+                <ul class="nav-items">
+                    <li>
+                        <a href="index.html"> LOG OUT </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
         <form onsubmit="return false;">
             <fieldset id="form-field">
                 <label for="rank"> On a scale of 1 to 10 (1 being perfect and 10 being terrible) how was your
