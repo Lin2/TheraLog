@@ -30,6 +30,8 @@ function start() {
             firebase.database().ref('users/' + user.uid).on('value', (snapshot) => {
                 const data = snapshot.val();
                 if (!data.hasOwnProperty("isPatient") || data.isPatient) {
+                    localStorage.clear();
+                    localStorage.setItem("isTherapist", "false");
                     window.location.href = "main.html";
                 } else {
                     getPatients(setTable);
@@ -55,6 +57,7 @@ function setTable() {
 
 function goToMainPage(id) {
     localStorage.setItem("id",id);
+    localStorage.setItem("isTherapist", "true");
     window.location.href = "main.html";
 }
 

@@ -7,14 +7,12 @@
     <meta name="viewport" content="width=device-width, initial scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link href="styles.css" rel="stylesheet">
-    <script src="https://www.gstatic.com/firebasejs/8.3.3/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/7.14.2/firebase-auth.js"></script>
+    <!-- <script src="https://www.gstatic.com/firebasejs/8.3.3/firebase-app.js"></script> -->
+    <!-- <script src="https://www.gstatic.com/firebasejs/7.14.2/firebase-auth.js"></script> -->
     <title> TheraLog </title>
 </head>
 
 <body>
-    <script src='fireBase.js'></script>
-    <script src='main.js'></script>
 
     <div class="nav-container">
         <div class="wrapper">
@@ -25,7 +23,7 @@
 
                 <ul class="nav-items">
                     <li>
-                        <a href="index.html"> LOG OUT </a>
+                        <a href="index.html"> Log Out </a>
                     </li>
                 </ul>
             </nav>
@@ -38,7 +36,7 @@
                 <div class="progress-bar" id="myBar"></div> 
                     <ul class="nav-items">
                         <li style="text-align: center">
-                            <a href="journalTest.html">+ New Log </a>
+                            <a onclick="return goToTodaysEntry();">+ New Log </a>
                             <div class="divider"></div>
                             <a href="videoindex.html"> Contact Therapist</a>
                         </li>
@@ -46,22 +44,9 @@
                     
                     </ul>
                     <hr>
-                        <table class="table">
-                            <tr>
-                                <td>Date: 4/9/2021</td>
-                            </tr>
-        
-                            <tr>
-                                <td>Date: 4/8/2021</td>
-                            </tr>
-        
-                            <tr>
-                                <td>Date: 4/6/2021</td>
-                            </tr>
-        
-                            <tr>
-                                <td>Date: 4/2/2021</td>
-                            </tr>
+                        <table class="table" id = "table-with-dates">
+                            
+                            
                         </table>
             </div>
            
@@ -69,7 +54,31 @@
 
     </div>
 
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.3.3/firebase-app.js"></script>
 
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/8.3.3/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.3.3/firebase-auth.js"></script>
+
+    <script>
+        // Your web app's Firebase configuration
+        var firebaseConfig = {
+            apiKey: "AIzaSyA7T7u3QPWi5uUXWT5Z976iEwGd2vA6yCE",
+            authDomain: "theralog-4e128.firebaseapp.com",
+            databaseURL: "https://theralog-4e128-default-rtdb.firebaseio.com/",
+            projectId: "theralog-4e128",
+            storageBucket: "theralog-4e128.appspot.com",
+            messagingSenderId: "744919907625",
+            appId: "1:744919907625:web:6079366aec650a0bce0b38"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+    </script>
+
+    <script src='main.js'></script>
+    <script src='patientmain.js'></script>
 
 </body>
 </html>

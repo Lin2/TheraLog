@@ -161,12 +161,11 @@ table {
 tr:hover {
     background-color:#83C5BE;
 }
- 
-
 
 table { 
     border-spacing: 10px;
     border-collapse: separate;
+    font-size: 30px;
 }
 
 #temp-hidden {
@@ -175,7 +174,7 @@ table {
 
 .table-button {
     text-decoration: none;
-    font-size: 40px;    
+    font-size: 35px;    
 
     background: #83C5BE;
     border-radius: 5px;

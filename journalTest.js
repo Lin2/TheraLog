@@ -10,7 +10,6 @@ var moodField = document.getElementById("mood");
 var entryField = document.getElementById("entry");
 
 //something(loadEntryFromDate, "04/10/2021", false, "WKAMZ1wfhJNniutBhtzKkG0gdE03");
-something(loadEntryFromDate, "04/10/2021", false);
 
 function loadEntryFromDate(userId, date, isReadOnly) {
     if (date === today) {
@@ -118,4 +117,9 @@ function something(func, num, bool, userId) {
             }
         })
     }
+}
+
+window.onload = function () {
+    console.log(localStorage.getItem("isTherapist"));
+    something(loadEntryFromDate, localStorage.getItem("date"), localStorage.getItem("isTherapist") === "true", localStorage.getItem("id"));
 }
