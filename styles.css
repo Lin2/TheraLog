@@ -68,7 +68,12 @@ nav .logo{
 
     background: #83C5BE;
     border-radius: 5px;
-    padding: 5px;
+    padding: 12px;
+    box-shadow: 0px 2px 3px 1px #949494;
+}
+
+.nav-items li a:hover {
+    background: #78b6b0;
 }
 
 .nav-items{
