@@ -172,3 +172,26 @@ table {
 #temp-hidden {
     visibility:hidden;
 }
+
+.table-button {
+    text-decoration: none;
+    font-size: 40px;    
+
+    background: #83C5BE;
+    border-radius: 5px;
+    padding: 12px;
+}
+
+.table-button:hover {
+    background: #78b6b0;
+}
+
+.table-item {
+    text-decoration: none;
+    font-size: 40px;    
+
+    background: #83C5BE;
+    border-radius: 5px;
+    padding: 12px;
+    width: 25%;
+}

@@ -1,16 +1,18 @@
 //testing functions for main therapist
 function getPatients() {
+    var names = [];
     var entryRef = firebase.database().ref('users/');
     entryRef.on('value', (snapshot) => {
       if (snapshot.exists()) {
         const data = snapshot.val();
         for (var key in data) {
           if (data[key].hasOwnProperty("isPatient") && data[key].isPatient === true) {
-            console.log(data[key].name);
+            names.push(data[key].name);
           }
         }
       }
     });
+    return names;
   }
   
   function setName(userId, nameData) {
@@ -30,7 +32,6 @@ function getPatients() {
         } else {
             document.getElementById("temp-hidden").style.visibility = "inherit";
             document.getElementById("temp-hidden").style.visibility = "visible";
-            console.log("aaa");
         }
       });
     }
@@ -38,6 +39,11 @@ function getPatients() {
       console.log("error, user not logged in");
     }
   })
+}
+
+function setTable() {
+    var names = getPatients();
+    
 }
 
 start();
