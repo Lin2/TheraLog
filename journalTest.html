@@ -2,17 +2,37 @@
 
 <head>
     <title>Journal</title>
+    <link rel="stylesheet" href="journalStyle.css">
 </head>
 
 <body>
+    <div>
+        <form onsubmit="return false;">
+            <fieldset id="form-field">
+                <label for="rank"> On a scale of 1 to 10 (1 being perfect and 10 being terrible) how was your
+                    day?</label>
+                <input type="text" id="rank" name="rank"> <br> <br>
+
+                <label for="mood"> Moods experienced: </label>
+                <input type="text" id="mood" name="mood"> <br> <br>
+
+                <label for="entry"> Today's entry: </label> <br>
+                <textarea id="entry" name="entry"></textarea> <br> <br>
+
+                <input type="submit" onclick="something()">
+
+            </fieldset>
+        </form>
+    </div>
+
 
     <!-- The core Firebase JS SDK is always required and must be listed first -->
     <script src="https://www.gstatic.com/firebasejs/8.3.3/firebase-app.js"></script>
 
     <!-- TODO: Add SDKs for Firebase products that you want to use
      https://firebase.google.com/docs/web/setup#available-libraries -->
-     <script src="https://www.gstatic.com/firebasejs/8.3.3/firebase-database.js"></script>
-     <script src="https://www.gstatic.com/firebasejs/8.3.3/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.3.3/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.3.3/firebase-auth.js"></script>
 
     <script>
         // Your web app's Firebase configuration
