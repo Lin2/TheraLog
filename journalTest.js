@@ -38,10 +38,9 @@ function something() {
         var rankData = document.getElementById("rank").value;
         var moodData = document.getElementById("mood").value;
         var entryData = document.getElementById("entry").value;
-        var eNum = 'e' + num;
 
         firebase.database().ref('users/' + userId + '/entries/').update({
-            [eNum]:{
+            [num]:{
                 date: dateData,
                 rank: rankData,
                 mood: moodData,

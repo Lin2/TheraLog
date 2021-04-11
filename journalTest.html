@@ -8,16 +8,20 @@
 <body>
     <div>
         <form onsubmit="return false;">
-            <label for="rank"> On a scale of 1 to 10 (1 being perfect and 10 being terrible) how was your day?</label> 
-            <input type="text" id="rank" name="rank"> <br> <br>
+            <fieldset id="form-field">
+                <label for="rank"> On a scale of 1 to 10 (1 being perfect and 10 being terrible) how was your
+                    day?</label>
+                <input type="text" id="rank" name="rank"> <br> <br>
 
-            <label for="mood"> Moods experienced: </label> 
-            <input type="text" id="mood" name="mood"> <br> <br>
+                <label for="mood"> Moods experienced: </label>
+                <input type="text" id="mood" name="mood"> <br> <br>
 
-            <label for="entry"> Today's entry: </label> <br>
-            <textarea id="entry" name="entry"></textarea> <br> <br>
+                <label for="entry"> Today's entry: </label> <br>
+                <textarea id="entry" name="entry"></textarea> <br> <br>
 
-            <input type="submit" onclick="something()">
+                <input type="submit" onclick="something()">
+
+            </fieldset>
         </form>
     </div>
 
@@ -27,8 +31,8 @@
 
     <!-- TODO: Add SDKs for Firebase products that you want to use
      https://firebase.google.com/docs/web/setup#available-libraries -->
-     <script src="https://www.gstatic.com/firebasejs/8.3.3/firebase-database.js"></script>
-     <script src="https://www.gstatic.com/firebasejs/8.3.3/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.3.3/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.3.3/firebase-auth.js"></script>
 
     <script>
         // Your web app's Firebase configuration
