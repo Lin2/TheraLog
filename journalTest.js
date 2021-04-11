@@ -9,19 +9,19 @@ var rankField = document.getElementById("rank");
 var moodField = document.getElementById("mood");
 var entryField = document.getElementById("entry");
 
-something(loadEntryFromDate, "04/10/2021");
+//something(loadEntryFromDate, "04/10/2021", false, "WKAMZ1wfhJNniutBhtzKkG0gdE03");
+something(loadEntryFromDate, "04/10/2021", false);
 
-function loadEntryFromDate(userId, date) {
+function loadEntryFromDate(userId, date, isReadOnly) {
     if (date === today) {
-        loadEntryIfExists(userId, -1);
+        loadEntryIfExists(userId, -1, isReadOnly);
     } else {
         firebase.database().ref('users/' + userId + '/entries/').on('value', (snapshot) => {
             var data = snapshot.val();
             console.log(data);
-            for(var key in data) {
-                console.log(key);
+            for (var key in data) {
                 if (data[key].date === date) {
-                    loadEntryIfExists(userId, key);
+                    loadEntryIfExists(userId, key, isReadOnly);
                     return;
                 }
             }
@@ -31,7 +31,11 @@ function loadEntryFromDate(userId, date) {
 }
 
 //load the corresponding entry, -1 for today's entry
-function loadEntryIfExists(userId, entryNum) {
+function loadEntryIfExists(userId, entryNum, isReadOnly) {
+    if (isReadOnly) {
+        document.getElementById("form-field").disabled = true;
+    }
+
     //load today's entry (or nothing if there's no entry for today)
     if (entryNum === -1) {
         var lastEntry = firebase.database().ref('users/' + userId + '/todayEntry');
@@ -62,20 +66,6 @@ function setFields(userId, entryNum) {
     });
 }
 
-//save data in fields
-function something(func, num) {
-    var database = firebase.database();
-
-    firebase.auth().onAuthStateChanged(user => {
-        if (user) {
-            func(user.uid, num);
-        }
-        else {
-            console.log("error, user not logged in");
-        }
-    })
-}
-
 function writeEntry(userId, num, dateData) {
     firebase.database().ref('users/' + userId + '/entries/').update({
         [num]: {
@@ -83,16 +73,6 @@ function writeEntry(userId, num, dateData) {
             rank: rankField.value,
             mood: moodField.value,
             entry: entryField.value
-        }
-    });
-}
-
-function outputEntry(userId, entryNum) {
-    var entryRef = firebase.database().ref('users/' + userId + '/entries/' + entryNum);
-    entryRef.on('value', (snapshot) => {
-        if (snapshot.exists()) {
-            const data = snapshot.val();
-            document.body.innerHTML = data.date + ': ' + data.entry;
         }
     });
 }
@@ -121,4 +101,23 @@ function writeTodaysEntry(userId) {
             writeEntry(userId, nextEntryNum, today);
         }
     });
+}
+
+//save data in fields
+function something(func, num, bool, userId) {
+    var database = firebase.database();
+    if (userId != null) {
+        func(userId, num, bool);
+    } else {
+
+        firebase.auth().onAuthStateChanged(user => {
+            if (user) {
+                func(user.uid, num, bool);
+                setName(user.uid, user.displayName);
+            }
+            else {
+                console.log("error, user not logged in");
+            }
+        })
+    }
 }
