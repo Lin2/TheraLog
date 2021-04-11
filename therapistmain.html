@@ -13,9 +13,6 @@
 </head>
 
 <body>
-    <script src='fireBase.js'></script>
-    <script src='main.js'></script>
-    
 
     <div class="nav-container">
         <div class="wrapper">
@@ -28,50 +25,74 @@
                     <li>
                         <a href="index.html"> LOG OUT </a>
                     </li>
-                    
+
                 </ul>
-                
+
             </nav>
-            
+
         </div>
-        
+
     </div>
-    
 
 
-    
+
+
     <div class="scroll-log">
-            <div class="progress-container">
-                <div class="progress-bar" id="myBar"></div> 
-                    <ul class="nav-items">
-                        <li style="text-align: center">
-                            <div class="divider"></div>
-                            <hr>
-                            <table class = "center">
-                                <tr>
-                                  <th>Patient Name</th>
-                                  <th>Log</th>
-                                  <th>Contact Patient</th>
-                                </tr>
-                                <tr>
-                                  <td>Jack Son</td>
-                                  <td><a href="main.html">Jack Son's Log</a></td>
-                                  <td><a href="videoindex.html">Contact Jack Son</a></td>
-                                </tr>
-                                <tr>
-                                  <td>Paul Lim</td>
-                                  <td><a href="main.html">Paul Lim's Log</a></td>
-                                  <td><a href="videoindex.html">Contact Paul Lim</a></td>
-                                </tr>
-                              </table>
-                        </li>
-                    </ul>
-                
-            </div>
-      </div>
-      
-      
+        <div class="progress-container">
+            <div class="progress-bar" id="myBar"></div>
+            <ul class="nav-items">
+                <li style="text-align: center">
+                    <div class="divider"></div>
+                    <hr>
+                    <table class="center">
+                        <tr>
+                            <th>Patient Name</th>
+                            <th>Log</th>
+                            <th>Contact Patient</th>
+                        </tr>
+                        <tr>
+                            <td>Jack Son</td>
+                            <td><a href="main.html">Jack Son's Log</a></td>
+                            <td><a href="videoindex.html">Contact Jack Son</a></td>
+                        </tr>
+                        <tr>
+                            <td>Paul Lim</td>
+                            <td><a href="main.html">Paul Lim's Log</a></td>
+                            <td><a href="videoindex.html">Contact Paul Lim</a></td>
+                        </tr>
+                    </table>
+                </li>
+            </ul>
 
+        </div>
+    </div>
+
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.3.3/firebase-app.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/8.3.3/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.3.3/firebase-auth.js"></script>
+
+    <script>
+        // Your web app's Firebase configuration
+        var firebaseConfig = {
+            apiKey: "AIzaSyA7T7u3QPWi5uUXWT5Z976iEwGd2vA6yCE",
+            authDomain: "theralog-4e128.firebaseapp.com",
+            databaseURL: "https://theralog-4e128-default-rtdb.firebaseio.com/",
+            projectId: "theralog-4e128",
+            storageBucket: "theralog-4e128.appspot.com",
+            messagingSenderId: "744919907625",
+            appId: "1:744919907625:web:6079366aec650a0bce0b38"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+    </script>
+
+    <script src='therapistmain.js'></script>
+    <script src='main.js'></script>
 
 </body>
+
 </html>
