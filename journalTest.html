@@ -12,6 +12,7 @@
 }
 
 #mood{
+    
     width: 20%;
 }
 
@@ -19,11 +20,29 @@
     width: 100%;
     height: 50%;
 }
+
+body {
+    background-color: #E29578;
+}
+
+form {
+    background-color: #E29578;
+    padding : 15px;
+    
+}
+input,textarea {
+    font-family:inherit;
+    font-size: inherit;
+    border : 2px solid #E29578;
+    margin:10px 0;
+    border-radius:5px;
+}   
+
 </style>
 
 <body>
     <div>
-        <script src='fireBase.js'></script>
+    <script src='fireBase.js'></script>
     <script src='main.js'></script>
 
     <div class="nav-container">
@@ -41,7 +60,7 @@
             </nav>
         </div>
     </div>
-        <form onsubmit="return false;">
+        <form onsubmit="return false;" >
             <fieldset id="form-field">
                 <label for="rank"> On a scale of 1 to 10 (1 being perfect and 10 being terrible) how was your
                     day?</label>
