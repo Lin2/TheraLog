@@ -105,7 +105,6 @@ function writeTodaysEntry(userId) {
 
 //save data in fields
 function something(func, num, bool, userId) {
-    var database = firebase.database();
     if (userId != null) {
         func(userId, num, bool);
     } else {
@@ -113,7 +112,6 @@ function something(func, num, bool, userId) {
         firebase.auth().onAuthStateChanged(user => {
             if (user) {
                 func(user.uid, num, bool);
-                setName(user.uid, user.displayName);
             }
             else {
                 console.log("error, user not logged in");
