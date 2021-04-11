@@ -88,7 +88,8 @@ nav .logo{
     height: 78%;
     display: flex;
     align-items: center;
-    padding-left: 50px;
+    padding-left: 10px;
+    padding-right: 10px;
     z-index: 2;
 }
 
@@ -99,7 +100,9 @@ td{
 .text-container {
     font-size: 40px;
     text-align: center;
-    padding-right: 100px;
+    padding: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
     float: left;
 }
  
@@ -147,7 +150,6 @@ scroll-log {
 table {
     border-collapse: separate;
     border-spacing: 0 30px;
-    width: 100%;
   }
   
   td {
