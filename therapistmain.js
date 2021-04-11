@@ -20,7 +20,6 @@ function getPatients() {
   }
   
   function start() {
-  var database = firebase.database();
   firebase.auth().onAuthStateChanged(user => {
     if (user) {
       setName(user.uid, user.displayName);
@@ -29,7 +28,9 @@ function getPatients() {
         if (!data.hasOwnProperty("isPatient") || data.isPatient) {
           window.location.href = "main.html";
         } else {
-            //unhide webpage
+            document.getElementById("temp-hidden").style.visibility = "inherit";
+            document.getElementById("temp-hidden").style.visibility = "visible";
+            console.log("aaa");
         }
       });
     }
